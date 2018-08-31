@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tilpasser seg små skjermer -->
+		<title>Kunstgalleri</title>
+		<link rel="stylesheet" href="styles.css"> <!-- Stylesheetet siden benytter -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- JQuery fra Google -->
+		<script src="canvas.js"></script> <!-- JavaScript/JQuery scriptet siden benytter -->
+	</head>
+
+	<body>
+		<header id="header">
+			<h1>Kunstgalleri</h1>
+			<p>Kunstner: <b><i>Tjommi Tjomm</i></b></p>
+		</header>
+
+		<nav id="nav" class="navElement">
+			<a id="topBtn">Top</a>
+  			<a id="bottomBtn">Bottom</a>
+		</nav>
+
+		<div id="row">
+			<div id="side">
+				<h2>Om kunstneren:</h2>
+				<p>Tjommi Tjomm kan sies å være en ekte pionér innenfor det etablerte kunstnermiljøet.
+					Mest kjent er han for sin beherskelse av utallige stillarter – alt fra <i>klassisk impresjonistisk stil</i>
+					til <i>moderne elementarisme</i> er hans våpen. Som navnet tilsier er han også en ekte kamerat.  </p>
+				<h2>Om bildet:</h2>
+				<p><b>Enkelklikk:</b> Figur skifter farge.</p>
+				<p><b>Dobbelklikk</b> Alle figurer blir borte.</p>
+				<p><b>Mouseoff:</b> Flere figurer tegnes.</p>
+			</div>
+
+			<div id="main">
+				<h2>Surrealismens oppstandelse</h2>
+				<h5>Maleri, Aug 30, 2008</h5>
+				<canvas id="can" width="600" height="300"></canvas>
+				<div id="status"></div>
+			</div>
+
+		</div>
+
+		<footer id="bot" class="navElement">
+			<h2>Dokumentasjon</h2>
+		</footer>
+
+		<div id="slider">
+			<h2>Dokumentasjon</h2>
+
+			<h3>CSS-grid / Flexbox:</h3>
+			<p>
+            Både CSS-Grid og Flexbox er to teknologier som benyttes for å strukturere HTML-elementer i en nettside – uten bruk av floats og positioning. Floats og positioning kan tidligere sies å ha vært "normen" for å strukturere websider. Denne gamle CSS-teknologien var i utgangspunktet laget for tekstformatering, og ikke for å brukes til styling av nettsider slik vi lager dem i dag. Både Flexbox og CSS-Grid løser dette problemet ved å tillate styling av flere elementer samtidig, og sørge for at du har kontroll over avstanden mellom og størrelsen på de forskjellige HTML-elementene på nettsiden din. Forskjellen mellom dem er at førstnevnte i utgangspunktet er laget for å style horisontalt/bortover, mens CSS-Grid gir mer kontroll i to dimensjoner – både horisontalt og vertikalt.<br><br>
+            Jeg har valgt å bruke Flexbox ettersom jeg visste at denne nettsiden kom til å være relativt liten og med liten kompleksitet. Den inneholder få HTML elementer og Flexbox er en enkel og grei teknologi som – etter min mening – tillater rask og enkel styling av nettsider på denne størrelsen.
+			</p>
+
+			<h3>HTML5-Canvas / SVG:</h3>
+			<p>
+            Både HTML-Canvas og Scalable Vector Graphics benyttes for å tegne/lage grafikk på websider. Det er imedlertid stor forskjell på hvordan disse to teknologiene går frem for å gjøre dette. HTML-Canvas elementet er kun en "beholder" for grafikk, og blir tegnet på – pixel for pixel – gjennom bruk av JavaScript-metoder. SVG er XML-basert og hvert element som blir tegnet opp blir "husket på" som et eget objekt. Hver av disse objektene ligger tilgjengelige i SVG sin DOM, noe som gjør at man enkelt kan gjøre forskjellige handlinger på hvert objekt ved å bruke JavaScript til å manipulere dem.<br><br>
+            Jeg har brukt Canvas i denne oppgaven, men i ettertid ser jeg at SVG hadde vært et bedre alternativ ettersom oppgaven ber om forskjellige oppførsler på forskjellige opptegnede elementer. Dette er noe som Canvas egentlig ikke egner seg så bra til, da hvert opptegnede element kun er en formasjon av pixler og ikke et eget objekt.
+        	</p>
+
+			<h3>jQuery:</h3>
+			<p>
+			jQuery er et bibliotek for JavaScript som simplifiserer programmeriing med JavaScript og gjør en del operasjoner enklere. Funksjonaliteten dette biblioteket tilbyr – som er relevant for denne oppgaven – er at det tillater enkel søking av forskjellige HTML-elemener slik at man kan manipulere dem. Jeg har for eksempel sluppet å måtte søke meg igjennom DOM-en med mange for-løkker. jQuery gjør det i tillegg enkelt å legge til hendelseslyttere på forskjellige HTML-objekter. Dette er noe jeg har brukt til å zoome ut navigasjonsbaren og footeren ved mouseenter, i tillegg til å skjule/vise denne dokumentasjonen ved museklikk på footeren. Jeg har også benyttet jQuery-biblioteket til å velge ut knappene som sender deg øverst og nederst til web-siden.
+			</p>
+
+			<h3>Cross-browser testing:</h3>
+			<p>
+            Testing på tvers av nettlesere er en viktig del innenfor webutvikling ettersom forskjellige nettlesere implementerer forskjellige teknologier og følgelig håndterer de på forskjellige måter. Tradisjonelt sett har internett sett liten grad av standardisering innenfor utviklingen av nettlesere – noe som har ført til at like websider har hatt forskjellige utforminger utifra hvilken nettleser de har blitt vist på. Denne situasjonen har heldigvis bedret seg de siste årene, og de fleste nettlesere vil i dag vise det meste innholdet på lik måte.<br><br>
+            Jeg har testet nettsiden min i <i>Google Chrome Versjon 68.0.3440.106</i> og <i>Safari 11.0.3 (13604.5.6)</i>. Jeg forsikret meg da om at HTML-elementene hadde lik sturkturering, at teksten hadde lik formatering og at alle animasjoner og manipuleringer av elementene fungerte på lik måte. 
+        	</p>
+
+			<h3>Informasjonskilder:</h3>
+			<p>
+			Ettersom jeg har hatt lite erfaring med webutvikling tidligere har jeg benyttet meg flittig av forskjellige informasjonskilder. Den viktigste kilden har nok vært <i>w3schools</i> sine nettsider, som inneholder introduksjoner, eksempler og veiledninger til alle teknologiene benyttet i denne oppgaven. Dog har jeg også latt meg inspirere av diverse Youtube-videoer samt andre nettsider, men ikke i så stor grad at jeg ser det nødvendig å henvise til disse. Her er lenker til forskjellige tutorials jeg har vært igjennom:<br>
+			<a href="https://www.w3schools.com/css/css_grid.asp" id="bottom">CSS-Grid</a>
+			<a href="https://www.w3schools.com/html/html5_canvas.asp">Canvas</a>
+			<a href="https://www.w3schools.com/css/css3_flexbox.asp">Flexbox</a>
+			<a href="https://www.w3schools.com/graphics/svg_intro.asp">SVG</a>
+			<a href="https://www.w3schools.com/jquery/default.asp">jQuery</a>
+			</p>
+		</div>
+		<br>
+		<br>
+	</body>
+</html>
