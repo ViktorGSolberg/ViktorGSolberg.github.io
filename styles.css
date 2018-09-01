@@ -1,3 +1,9 @@
+@media screen and (max-width: 1060px) {
+    #row {
+    	flex-direction: column;
+    }
+}
+
 /* Vil ha margin til 0 slik at hele websiden blir utnyttet */
 body {
     font-family: Arial;
