@@ -1,6 +1,12 @@
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 800px) {
     #row {
     	flex-direction: column;
+    }
+    #side {
+	flex: 100%;
+    }
+    #main {
+	 flex: 100%;   
     }
 }
 
